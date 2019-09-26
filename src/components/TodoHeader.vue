@@ -1,6 +1,6 @@
 <template>
     <div class="topArea">
-      <h2 class="title">jigfree's Todo App</h2>
+      <h2 class="title">{{this.$store.state.headerText}}</h2>
       <button class="removeAllBtn" @click="removeAll">Reset</button>
      </div>
 </template>
@@ -9,7 +9,8 @@
 export default {
     methods:{
       removeAll(){
-          this.$emit('removeAllEvt');
+          //this.$emit('removeAllEvt');
+          this.$store.commit('removeAllitems');
       }
     }
 }
@@ -24,7 +25,7 @@ export default {
 }
 
 .topArea .title {
-  color: rgb(231, 250, 106);;
+  color: rgb(255, 0, 89);
   position: relative;
   height: 30px;
 }
@@ -35,12 +36,12 @@ export default {
   background: rgb(28, 28, 28);
   font-size: 0.9rem;
   border-radius: 6px;
-  color: rgb(231, 250, 106);
+  color: rgb(255, 0, 89);
   cursor: pointer;
 }
 .removeAllBtn:hover{
   color: rgb(28, 28, 28);
-  background: rgb(231, 250, 106);
+  color: rgb(255, 111, 0);
   font-weight: bold;
 }
 .removeAllBtn:focus {

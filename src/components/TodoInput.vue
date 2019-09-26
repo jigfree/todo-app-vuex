@@ -25,7 +25,8 @@ export default {
     addItem() {
       if (this.newItem !== "") {
         var str = this.newItem;
-        this.$emit("addItemEvt", str);
+        //this.$emit("addItemEvt", str);
+        this.$store.commit('addTodoList', str);
         this.clearText();
       } else {
         alert("할일을 입력해주세요.");
@@ -59,14 +60,14 @@ input:focus {
   color: rgb(137, 11, 179);
 }
 ::placeholder {
-  color: rgb(242, 174, 174);
+  color: rgb(255, 0, 89);
 }
 
 .addBtn {
   float: right;
   height: 40px;
   background: rgb(12, 2, 7);
-  color: rgb(231, 250, 106);
+  color: rgb(255, 0, 89);
 
   width: 3.5rem;
   font-size: 1.6rem;
